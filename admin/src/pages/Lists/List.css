@@ -1,0 +1,31 @@
+.Lists-container {
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .lists { 
+    text-align: center;
+     
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1fr 1fr 1fr;
+      gap:10px;
+     margin-bottom: 20px;
+    align-items: center;
+    width: 100%;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+  }
+  
+  .items{
+     display: grid;
+      grid-template-columns: 2fr 1.5fr 1fr 1fr 1fr;
+      align-items: center;
+      width: 100%;
+       text-align: center;
+       gap:10px;
+  }
+  
+  
