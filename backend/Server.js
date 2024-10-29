@@ -24,4 +24,3 @@ import "dotenv/config"
  app.listen(PORT,()=>{
         console.log(`server is working http://localhost:${PORT} `);
  })
- //mongodb+srv://panwarkanu2001:bpPLpnfh9Y1bC5pc@foodbox.lwrn3.mongodb.net/?
