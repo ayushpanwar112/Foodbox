@@ -11,9 +11,10 @@ const createToken = (id) => {
 const registerUser = async (req, res) => {
     try {
         const { name, password, email } = req.body;
-
+             console.log(email);
         // Check if email already exists
-        const exists = await userModel.findOne({ email });
+        const exists = await userModel.findOne({email});
+           
         if (exists) {
             return res.status(400).json({ success: false, message: "Email already exists" });
         }
@@ -51,8 +52,27 @@ const registerUser = async (req, res) => {
     }
 }
 
-const loginUser = () => {
+const loginUser =async (req,res) => {
+    const {email,password} = req.body;
+     try {
+         const user = await userModel.findOne({email});
+         if(!user){
+           return  res.status(404).json({success:false,message:"user not found"});
+
+         }
+         const  isPassword  = await bcrypt.compare(password,user.password);
+             if(!isPassword)
+             {
+                return res.status(404).json({success:false,message:"Invalid Credentails"});
+             }
+              const token = createToken(user._id)
+              res.status(200).json({success:true,token});
+     } catch (error) {
+         console.log("error message-->",error);
+         res.status(500).json({success:false,message:"error"})
+     }
     // Implementation for loginUser
+
 }
 
 export { loginUser, registerUser };

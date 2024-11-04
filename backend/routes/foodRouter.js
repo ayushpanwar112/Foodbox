@@ -8,7 +8,7 @@ import  express from "express";
         return cb(null,`${Date.now()}${file.originalname}`)
     }
  })
-  const upload = multer({storage:storage})
+  const upload = multer({storage})
  foodRouter.post("/add",upload.single("image"),addFood);
  foodRouter.get("/list",listFood);
  foodRouter.post("/remove",removeFood)

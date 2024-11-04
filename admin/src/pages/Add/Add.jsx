@@ -15,7 +15,7 @@ const Add = ({url}) => {
   const onChangeHandler=(e)=>{
       const name = e.target.name;
       const value =e.target.value;
-      setDate(data=>(({...data,[name]:value})))
+      setDate(data=>(({...data,[name]:value}))) // can not  understand this yrrr
     
   }
   const onSubmitHandler= async(e)=>{
@@ -50,7 +50,7 @@ const Add = ({url}) => {
         <div className="add-img-upload">
           <p>Upload Image</p>
           <label htmlFor='image'>
-            <img src={image?URL.createObjectURL(image):assets.upload_area} alt='' className='w-32 h-23 object-fill' />
+            <img src={image?URL.createObjectURL(image):assets.upload_area} alt='' className='w-32 h-23 object-fill' />  {/*chng name of image*/}
 
           </label>
            <input type='file' onChange={(e)=>{setImage(e.target.files[0])}}id='image' hidden required/>
