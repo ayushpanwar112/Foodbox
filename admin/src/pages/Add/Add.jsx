@@ -63,11 +63,11 @@ const Add = ({url}) => {
               <textarea  name="description" rows="6"placeholder='Product Description 'onChange={onChangeHandler } value={data.description} className=' border-l-neutral-800 border-[1px] p-2' required/>  
                 <div className='flex gap-2'>
               <input type="number" name='price' onChange={onChangeHandler} value={data.price} placeholder='Add Price'className=' border-l-neutral-800 px-2 border-[1px]' required/>
-              <select
-  name="category"
+              
+              <select name="category"
   className="border border-neutral-800 rounded-md px-3 py-2 text-gray-700 bg-gray-50 cursor-pointer transition-all duration-300 hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-300" onChange={onChangeHandler}
 
-required> <option value="category">Category</option>
+required> <option value="category" >Category</option> //change on it
   <option value="salad">Salad</option>
   <option value="Rolls">Rolls</option>
   <option value="Deserts">Desserts</option>
